@@ -25,7 +25,7 @@ main{
   position: relative;
   background-color: #24252A;
   width: 100%;
-  min-height: 100px;
+  min-height: 750px;
   height: 100vh;
   overflow: hidden;
   padding: 1.5rem 3rem;
