@@ -25,7 +25,7 @@ main{
   position: relative;
   background-color: #24252A;
   width: 100%;
-  min-height: 750px;
+  min-height: 100px;
   height: 100vh;
   overflow: hidden;
   padding: 1.5rem 3rem;
@@ -57,7 +57,7 @@ padding: 1rem 2rem;
 color: #e7e2db;
 font-weight: 200;
 letter-spacing: 1px;
-transition: .3s;
+transition: 0.3s;
 }
 
 .nav-links a i{
