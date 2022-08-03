@@ -256,7 +256,7 @@ margin-bottom: .25rem;
 
 .my-services{
   background-color: #24252A;
-  background-image: url(/img/My-work.jpg);
+  background-image: url(./img/My-work.jpg);
   background-size: cover;
   color: #e7e2db;
   text-align: center;
