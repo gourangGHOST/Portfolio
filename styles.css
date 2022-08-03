@@ -147,7 +147,7 @@ transition: 0.3s;
   height: 100px;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 0;
+  bottom: 10px;
   background-image: linear-gradient(to top,rgb(157, 167, 165), rgb(121, 124, 124))
 }
 
@@ -256,7 +256,7 @@ margin-bottom: .25rem;
 
 .my-services{
   background-color: #24252A;
-  background-image: url(/img/glenn-carstens-peters-P1qyEf1g0HU-unsplash.jpg);
+  background-image: url(/img/My-work.jpg);
   background-size: cover;
   color: #e7e2db;
   text-align: center;
