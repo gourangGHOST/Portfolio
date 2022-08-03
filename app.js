@@ -1,3 +1,8 @@
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+
+
 let timeline = gsap.timeline();
 
 timeline.to(".image-wrap",{
@@ -25,3 +30,6 @@ timeline.to(".image-wrap",{
   function getYDistance(el){
     return window.innerHeight - document.querySelector(el).getBoundingClientRect().top
   }
+
+ 
+ 
