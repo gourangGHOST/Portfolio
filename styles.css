@@ -181,6 +181,9 @@ transition: 0.3s;
 
   --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
         0.125em 0.125em 0.25em rgba(0,0,0,.15);
+
+  --bg-color-transparent: rgba(255, 255, 255, 0.6);
+  --heading--color: hsl(var(--hue-1)61%, 24%);
 }
 
 @media(min-width: 800px){
@@ -207,10 +210,10 @@ img{
 
 
 
-:focus{
+/* :focus{
   outline: 3px solid var(--clr-accent);
   outline-offset: 3px;
-}
+} */
 
 
 
@@ -298,7 +301,7 @@ margin-bottom: .25em;
   margin: 0 auto;
 }
 
-@media (min-width: 800px){
+@media (min-width: 600px){
   .services{
     display: flex;
     max-width: 1000px;
@@ -351,4 +354,143 @@ margin-bottom: .25em;
       position: relative;
       z-index: 2;
   }
+}
+
+
+/* My work / projects*/
+
+.filter-btn.mixitup-control-active{
+  color: #f3c892;
+}
+
+.portfolio-header{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+
+
+
+.portfolio-title{
+  padding-bottom: 1rem;
+}
+
+.filter-btn{
+  display: inline-block;
+  color: #24252A;
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  margin-left: 1.3rem;
+  font-family: inherit;
+  text-transform: uppercase;
+}
+
+.portfolio-gallery{
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+}
+
+.prt-card{
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #f3c892;
+  height: 265px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.prt-image{
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.prt-desc{
+  padding: 1.1rem 1.6rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.prt-desc h3{
+  font-size: .95rem;
+  color: #24252A;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.prt-image img{
+  width: 105%;
+  
+
+}
+
+.btn.secondary-btn.sm{
+  padding: .07rem 0.1rem;
+  font-size: 0.78rem;
+  border-bottom-width: 2px;
+}
+
+.btn.secondary-btn.sm::before{
+  height: 2px;
+  bottom: -2px;
+}
+
+.prt-overlay{
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(0px);
+  cursor: pointer;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.prt-image:hover .prt-overlay{
+  pointer-events: auto;
+  background-color: var(--bg-color-transparent);
+  backdrop-filter: blur(10px);
+}
+
+.prt-icon{
+  color: hsl(var(--hue-1)61%, 24%);
+  font-size: 1.1rem;
+  margin: 0 0.4rem;
+  background-color: #e7e2db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+  opacity: 0;
+  cursor: pointer;
+  transform: translateY(15px);
+}
+
+.prt-icon:hover{
+  background-color: #f3c892;
+}
+
+.prt-image:hover .prt-icon{
+  opacity: 1;
+  transform: translateY(0px);
+  transition: 0.3s var(--i);
 }

@@ -32,4 +32,13 @@ timeline.to(".image-wrap",{
   }
 
  
- 
+/* My work animation */
+
+let mixer = mixitup(".portfolio-gallery",{
+    selectors: {
+        target: '.prt-card'
+    },
+    animation: {
+        duration: 500,
+    }
+});
