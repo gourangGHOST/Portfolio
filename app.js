@@ -1,5 +1,7 @@
 window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
+  window.scrollTo({
+    top: 0
+  });
 }
 
 
@@ -42,3 +44,20 @@ let mixer = mixitup(".portfolio-gallery",{
         duration: 500,
     }
 });
+
+function scrollToId(id) {
+  const coords = getOffset(document.getElementById(id))
+  console.log(coords)
+  window.scrollTo({
+    top: coords.top,
+    behavior: 'smooth'
+  })
+}
+
+function getOffset(el) {
+  const rect = el.getBoundingClientRect();
+  return {
+    left: rect.left + window.scrollX,
+    top: rect.top + window.scrollY
+  };
+}
