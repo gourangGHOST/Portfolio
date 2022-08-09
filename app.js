@@ -1,23 +1,35 @@
+/* reload to top */
 window.onbeforeunload = function () {
   window.scrollTo({
     top: 0
   });
 }
 
+/* Hamburger animation */
+
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
 hamburger.addEventListener("click", () =>{
-  hamburger.classList.toggle("active")
-  navMenu.classList.toggle("active")
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
 })
 
-document.querySelectorAll("nav-links").forEach(n => n.addEventListener("click", () =>{
-  hamburger.classList.remove("active")
-  navMenu.classList.remove("active")
+document.querySelectorAll(".new-nav").forEach(n => n.addEventListener("click", () =>{
+  hamburger.classList.remove("active");
+  navMenu.classList.remove("active");
 }))
 
 
+/* Magnifine image */
+const prt_section = document.querySelector(".portfolio");
+const zoom_icons = document.querySelectorAll(".zoom-icon");
+const modal_overlay = document.querySelector(".modal-overlay");
+const images = document.querySelectorAll(".images img");
+const prev_btn = document.querySelector(".prev-btn");
+const next_btn = document.querySelector(".next-btn");
+
+/* reveal page animation */
 
 let timeline = gsap.timeline();
 
@@ -48,7 +60,7 @@ timeline.to(".image-wrap",{
   }
 
  
-/* My work animation */
+/* My work filter animation */
 
 let mixer = mixitup(".portfolio-gallery",{
     selectors: {
@@ -58,6 +70,8 @@ let mixer = mixitup(".portfolio-gallery",{
         duration: 500,
     }
 });
+
+/* Smooth scroll */
 
 function scrollToId(id) {
   const coords = getOffset(document.getElementById(id))
@@ -74,4 +88,48 @@ function getOffset(el) {
     left: rect.left + window.scrollX,
     top: rect.top + window.scrollY
   };
+}
+
+/* Modal pop up animation */
+
+let currentIndex = 0;
+
+zoom_icons.forEach((icn, i) => 
+  icn.addEventListener("click", () => {
+     prt_section.classList.add("open");
+     document.body.classList.add("stopScrolling");
+     currentIndex = i;
+     changeImage(currentIndex);
+  })
+);
+
+modal_overlay.addEventListener("click", () => {
+  prt_section.classList.remove("open");
+  document.body.classList.remove("stopScrolling");
+});
+
+prev_btn.addEventListener("click", () => {
+  if (currentIndex === 0) {
+    currentIndex = 5;
+  } else {
+    currentIndex--;
+  }
+  changeImage(currentIndex)
+
+});
+
+next_btn.addEventListener("click", () => {
+  if (currentIndex === 5) {
+    currentIndex = 0;
+  } else {
+    currentIndex++;
+  }
+
+  changeImage(currentIndex)
+});
+
+function changeImage(index) {
+  images.forEach(img => img.classList.remove("showImage"));
+  images[index].classList.add("showImage"); 
+
 }
