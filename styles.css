@@ -226,12 +226,12 @@ nav ul {
 
 
 @media (max-width: 450px) {
-   .portfolio-title{
-    /* padding-bottom: 0;
+  /* .portfolio-title{
+     padding-bottom: 0;
     display: flex;
     flex-direction: column;
-    align-items: center; */
-  }
+    align-items: center; 
+  }*/
 
   .portfolio-header{
     flex-direction: column;
