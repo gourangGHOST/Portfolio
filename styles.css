@@ -233,6 +233,10 @@ nav ul {
     align-items: center; 
   }*/
 
+  /* .portfolio-gallery{
+    overflow: hidden;
+  } */
+
   .portfolio-header{
     flex-direction: column;
     justify-content: center;
